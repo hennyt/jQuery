@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge 5</title>
+	<style>
+	body{
+		margin: 2%;
+		border: 1px solid black;
+		background-color: #b3b3b3;
+	}
+	#image{
+    	line-height:325px;
+			width: 388px;
+    	height: 325px;
+			border:5px solid black;
+			margin:0 auto;
+    	background-repeat: no-repeat;
+    	color:black;
+    	text-align: center;
+    	background-color: #8e68ff;
+    	background-size: 100%;
+    	margin-bottom:25px;
+    	font-size:200%;
+			font-weight: 600;
+	}
+	.preview{
+		width:10%;
+		margin-left:17%;
+    	border: 10px solid black;
+	}
+	img{
+		width:95%;
+	}
+	h1{
+		text-align: center;
+	}
+	</style>
+
+
+</head>
+<body>
+	<h1>Challenge 5</h1>
+		<div id = "image">
+			Hover over an image below.
+		</div>
+
+		<img class = "preview"
+			tabindex = "0"
+			src = "images/eminem3.JPG"
+			alt = "Hello, Eminem!">
+
+		<img class = "preview"
+			tabindex = "0"
+			alt = "Eminem playing"
+			src = "images/eminem.JPG">
+
+		<img class = "preview"
+			tabindex = "0"
+			alt = "Eminem sleeping"
+			src = "images/eminem1.JPG">
+
+		<img class = "preview"
+			tabindex = "0"
+			src = "images/eminem2.JPG"
+			alt = "Eminem sunning">
+
+		<img class = "preview"
+			tabindex = "0"
+			src = "images/eminem4.JPG"
+			alt = "Em with toys">
+
+		<img class = "preview"
+			tabindex = "0"
+			src = "images/eminem5.JPG"
+			alt = "Upside Down Em!">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	</script>
+	<script>
+			let msg = "Hover over an image below."
+			$("img").mouseover(function() {
+				$("#image").css("background-image","url('"+$(this).attr("src")+"')");
+				$("#image").html($(this).attr("alt"));
+			});
+
+			$("img").focus(function(){
+				$("#image").css("background-image","url('"+$(this).attr("src")+"')");
+				$("#image").html($(this).attr("alt"));
+			}
+		);
+
+		$("img").mouseleave(function(){
+			$("#image").css("background-image","url('')");
+			$("#image").html(msg)
+		});
+
+		$("img").blur(function(){
+			$("#image").css("background-image","url('')");
+			$("#image").html(msg)
+		});
+		//
+		// 	 imgs[i].onfocus = function() {
+		// 	 	document.querySelector('#image').style.backgroundImage="url('"+imgs[i].src+"')";
+		// 	 	document.querySelector('#image').innerHTML= imgs[i].alt;
+		// 	 }
+		//
+		// 	 imgs[i].onmouseleave = function() {
+		// 	 	document.querySelector('#image').style.backgroundImage="url('')";
+		// 	 	document.querySelector('#image').innerHTML= msg;
+		// 	 }
+		//
+		// 	 imgs[i].onblur = function() {
+		// 	 	document.querySelector('#image').style.backgroundImage="url('')";
+		// 	 	document.querySelector('#image').innerHTML= msg;
+		// 	 }
+		//  }
+	</script>
+
+
+</body>
+</html>
